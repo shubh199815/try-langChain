@@ -15,7 +15,8 @@ def scrape_linkedin_profile(linkedin_profile_url: str):
     response = requests.get(
         api_endpoint, params={"url": linkedin_profile_url}, headers=header_dic
     )
-    # gist_endpoint = "https://gist.githubusercontent.com/shubh199815/b8d520271879ca18e22dc96f62203c2b/raw/ef231887434b3319594074f6cdfea718e46e44a2/shubh-linkedin.json"
+    # For testing
+    # gist_endpoint = "https://gist.githubusercontent.com/shubh199815{blah blah blah}.json"
     # response = requests.get(gist_endpoint)
 
     data = response.json()

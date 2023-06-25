@@ -10,6 +10,7 @@ bs4 = "*"
 openai = "*"
 python-dotenv = "*"
 google-search-results = "*"
+tweepy = "*"
 
 [dev-packages]
 

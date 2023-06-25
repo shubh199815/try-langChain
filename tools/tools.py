@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 class CustomSerpAPIWrapper(SerpAPIWrapper):
     def __init__(self):
         super(CustomSerpAPIWrapper, self).__init__()

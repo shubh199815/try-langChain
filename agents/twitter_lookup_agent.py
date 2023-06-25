@@ -13,14 +13,13 @@ load_dotenv()
 
 def lookup(name: str) -> str:
     llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo")
-    template = """given the full name {name_of_person} I want you to get me a link to their LinkedIn profile page.
-                    Your answer should contain only a URL"""
-
+    template = """given the name {name_of_person} I want you to find me a link to their Twitter profile page, and extract from it their username.
+                    In your final answer only the person's username"""
     tools_for_agent = [
         Tool(
-            name="Crawl Google for linkedin profile page",
+            name="Crawl Google for Twitter profile page",
             func=get_profile_url,
-            description="useful for when you get the LinkedIn Page URL",
+            description="useful for when you get the Twitter username",
         )
     ]
     agent = initialize_agent(
@@ -33,5 +32,5 @@ def lookup(name: str) -> str:
         template=template, input_variables=["name_of_person"]
     )
 
-    linkedin_profile_url = agent.run(prompt_template.format_prompt(name_of_person=name))
-    return linkedin_profile_url
+    twitter_username = agent.run(prompt_template.format_prompt(name_of_person=name))
+    return twitter_username
