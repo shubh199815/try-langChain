@@ -25,6 +25,8 @@ if __name__ == "__main__":
         given the LinkedIn information {linkedin} and Twitter {twitter} about a person from I want you to create:
         1. a short summary
         2. two interesting facts about them
+        3. A topic that may interest them
+        4. 2 creative Ice breakers to open a conversation with them
     """
     summary_prompt_template = PromptTemplate(
         input_variables=["linkedin", "twitter"], template=summary_template
